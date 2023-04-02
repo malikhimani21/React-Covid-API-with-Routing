@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import Details from "./components/Details";
+// import { Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import CasesTime from './components/subcomponents/CasesTime';
+import Statewise from './components/subcomponents/Statewise';
+import Tested from './components/subcomponents/Tested';
+import Menu from './Menu';
+import Other from './components/subcomponents/Other';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Menu />
+
+      <Routes>
+
+        <Route exact path='/' element={<Details />} />
+
+        <Route path='/statewise' element={<Statewise />} />
+
+        <Route path='/casestimeseries' element={<CasesTime />} />
+
+        <Route path='/tested' element={<Tested />} />
+
+        <Route path='/other' element={<Other />} />
+
+      </Routes> 
+
+      {/* <div className="App">
+        <Details />
+      </div> */}
+    </>
   );
 }
 
